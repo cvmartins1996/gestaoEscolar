@@ -8,12 +8,20 @@ public class Desempenho {
 		mediaPorMateria(aluno);
 		System.out.println("\n Média geral: " + aluno.getGrade().getMedia());
 		
+		
 	}
 
 	private void mediaPorMateria(Aluno aluno) {
 		List<Materia> materias = aluno.getGrade().getMaterias();
 		for (Materia materia : materias) {
 			System.out.println("Exibir média por materia" + "\n" + "Materia: " + materia.getNome() + " Média: " + materia.getMedia());
+		}
+	}
+
+	public void mostrarCadastro(Paternidade paternidade) {
+		List<Aluno> alunos = paternidade.getAluno();
+		for (Aluno aluno : alunos) {
+			System.out.println("Nome do Aluno: " + aluno.getNome() + " Paternidade associada ao aluno: " + paternidade.getNome());
 		}
 	}
 

@@ -1,14 +1,15 @@
 package com.treinamento;
 
-public class Aluno {
+public class Aluno extends Cadastro {
+
+
 
 	private Grade grade;
-	private String nome;
 
 	public Aluno(String nome) {
-		this.nome = nome;
+		super(nome);
 	}
-
+	
 	public void setGrade(Grade grade) {
 		this.grade = grade;
 	}
@@ -17,8 +18,5 @@ public class Aluno {
 		return grade;
 	}
 	
-	public String getNome() {
-		return nome;
-	}
 
 }
