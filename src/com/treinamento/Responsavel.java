@@ -3,11 +3,11 @@ package com.treinamento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paternidade extends Cadastro {
+public class Responsavel extends Pessoa {
 
 	private List<Aluno> alunos = new ArrayList<>();
 
-	public Paternidade(String nome) {
+	public Responsavel(String nome) {
 		super(nome);
 	}
 

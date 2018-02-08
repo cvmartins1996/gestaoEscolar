@@ -1,8 +1,6 @@
 package com.treinamento;
 
-public class Aluno extends Cadastro {
-
-
+public class Aluno extends Pessoa {
 
 	private Grade grade;
 

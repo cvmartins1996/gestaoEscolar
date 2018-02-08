@@ -1,9 +1,9 @@
 package com.treinamento;
 
-public class Cadastro {
+public class Pessoa {
 	private String nome;
 
-	public Cadastro(String nome) {
+	public Pessoa(String nome) {
 		this.nome = nome;
 	}
 	

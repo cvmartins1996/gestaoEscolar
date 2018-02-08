@@ -5,10 +5,13 @@ import java.util.List;
 public class Desempenho {
 
 	public void exibir(Aluno aluno) {
+		System.out.println("Nome do Aluno: " + aluno.getNome());
 		mediaPorMateria(aluno);
+		mediaGeral(aluno);
+	}
+
+	private void mediaGeral(Aluno aluno) {
 		System.out.println("\n Média geral: " + aluno.getGrade().getMedia());
-		
-		
 	}
 
 	private void mediaPorMateria(Aluno aluno) {
@@ -18,11 +21,5 @@ public class Desempenho {
 		}
 	}
 
-	public void mostrarCadastro(Paternidade paternidade) {
-		List<Aluno> alunos = paternidade.getAluno();
-		for (Aluno aluno : alunos) {
-			System.out.println("Nome do Aluno: " + aluno.getNome() + " Paternidade associada ao aluno: " + paternidade.getNome());
-		}
-	}
 
 }
