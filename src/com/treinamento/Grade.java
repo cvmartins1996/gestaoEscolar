@@ -7,7 +7,7 @@ public class Grade {
 
 	private List<Materia> materias = new ArrayList<>();
 	
-	public void adicionarMaterias(Materia materia) {
+	public void adicionarMateria(Materia materia) {
 		materias.add(materia);
 	}
 	

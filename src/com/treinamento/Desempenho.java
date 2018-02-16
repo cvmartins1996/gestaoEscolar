@@ -15,9 +15,13 @@ public class Desempenho {
 	}
 
 	private void mediaPorMateria(Aluno aluno) {
+		
 		List<Materia> materias = aluno.getGrade().getMaterias();
+		
+		System.out.println(" Exibição Por Materia ");
+		
 		for (Materia materia : materias) {
-			System.out.println("Exibir média por materia" + "\n" + "Materia: " + materia.getNome() + " Média: " + materia.getMedia());
+			System.out.println("\n" + "Materia: " + materia.getNome() + " Média: " + materia.getMedia() + "\nClassificação do Aluno na disciplina: " +  materia.getClassificacao());
 		}
 	}
 

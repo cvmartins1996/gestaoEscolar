@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Responsavel extends Pessoa {
 
-	private List<Aluno> alunos = new ArrayList<>();
+	private List<Pessoa> alunos = new ArrayList<>();
 
 	public Responsavel(String nome) {
 		super(nome);
 	}
 
-	public void setFilho(Aluno aluno) {
+	public void adicionarFilho(Aluno aluno) {
 		alunos.add(aluno);
 	}
 	
-	public List<Aluno> getAluno() {
+	public List<Pessoa> getAluno() {
 		return alunos;
 	}
 

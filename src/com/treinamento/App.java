@@ -4,24 +4,25 @@ public class App {
 	public static void main(String[] args) {
 		//Pessoa aluno = new Aluno("Creuza");
 		Aluno aluno = new Aluno("Creuza");
+		Aluno aluno2 = new Aluno("Izelda");
 		
 		Responsavel responsavel = new Responsavel("Jusué");
 		
-		responsavel.setFilho(aluno);
-		
+		responsavel.adicionarFilho(aluno);
+		responsavel.adicionarFilho(aluno2);
 		
 		Materia cienciasSociais = new Materia("Ciencias Sociais");
-		cienciasSociais.adicionarNotas(new Nota(8.5f));
-		cienciasSociais.adicionarNotas(new Nota(10f));
+		cienciasSociais.adicionarNota(new Nota(5f));
+		cienciasSociais.adicionarNota(new Nota(4f));
 		
 		Materia filosofia = new Materia("Filosofia");
-		filosofia.adicionarNotas(new Nota(10f));
-		filosofia.adicionarNotas(new Nota(10f));
+		filosofia.adicionarNota(new Nota(7f));
+		filosofia.adicionarNota(new Nota(10f));
 		
 		
 		Grade grade = new Grade();
-		grade.adicionarMaterias(cienciasSociais);
-		grade.adicionarMaterias(filosofia);
+		grade.adicionarMateria(cienciasSociais);
+		grade.adicionarMateria(filosofia);
 		aluno.setGrade(grade);
 		
 		Desempenho desempenho = new Desempenho();
@@ -31,6 +32,7 @@ public class App {
 		pessoasCadastradas.mostrar(aluno);
 		pessoasCadastradas.mostrar(responsavel);
 		
+		GestaoDoResponsavel gestao = new GestaoDoResponsavel();
+		gestao.exibir(responsavel);
 	}
 }
-
