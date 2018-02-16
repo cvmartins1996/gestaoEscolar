@@ -2,8 +2,8 @@ package com.treinamento;
 
 public class Insatisfatorio extends Classificacao {
 
-	public void setNome() {
-		this.nome = "I";
+	public String setNome(String nome) {
+		return this.nome = nome;
 	}
 	
 }

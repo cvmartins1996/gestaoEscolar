@@ -26,14 +26,14 @@ public class Materia {
 	}
 
 	public String getClassificacao() {
-		if ( getMedia() > 9f ) {
-			return muitoBom.getNome();
-		} else if ( getMedia() > 7.5f ) {
-			return bom.getNome();
-		} else if ( getMedia() > 6f ) {
-			return razoavel.getNome();
+		if ( getMedia() < 6f ) {
+			return insatisfatorio.setNome("I");
+		} else if ( getMedia() < 7.5f ) {
+			return razoavel.setNome("R");
+		} else if ( getMedia() < 9f ) {
+			return bom.setNome("B");
 		} else {
-			return insatisfatorio.getNome();
+			return muitoBom.setNome("MB");
 		}
 	}
 	

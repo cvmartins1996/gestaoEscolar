@@ -2,9 +2,8 @@ package com.treinamento;
 
 public class MuitoBom extends Classificacao {
 
-	
-	public void setNome() {
-		this.nome = "MB";
+	public String setNome(String nome) {
+		return this.nome = nome;
 	}
 
 }
