@@ -21,9 +21,6 @@ public class Materia {
 		return somatoriaMedia();
 	}
 
-	public String getClassificacao() {
-		return " ";
-	}
 	
 	private float somatoriaMedia() {
 		float somatoria = 0;
