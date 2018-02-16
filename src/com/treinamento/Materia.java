@@ -21,7 +21,6 @@ public class Materia {
 		return somatoriaMedia();
 	}
 
-	
 	private float somatoriaMedia() {
 		float somatoria = 0;
 		for (Nota nota : notas) {
