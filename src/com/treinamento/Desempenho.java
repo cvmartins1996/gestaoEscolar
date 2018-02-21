@@ -21,7 +21,7 @@ public class Desempenho {
 		System.out.println(" Exibição Por Materia ");
 		
 		for (Materia materia : materias) {
-			System.out.println("\n" + "Materia: " + materia.getNome() + " Média: " + materia.getMedia() + "\nClassificação do Aluno na disciplina: " +  materia.getClassificacao());
+			System.out.println("\n" + "Materia: " + materia.getNome() + " Média: " + materia.getMedia() + "\nClassificação do Aluno na disciplina: " );
 		}
 	}
 

@@ -8,11 +8,6 @@ public class Materia {
 	private List<Nota> notas = new ArrayList<>();
 	private String nome;
 	
-	private MuitoBom muitoBom = new MuitoBom();
-	private Bom bom = new Bom();
-	private Razoavel razoavel = new Razoavel();
-	private Insatisfatorio insatisfatorio = new Insatisfatorio();
-	
 	public Materia(String nome) {
 		this.nome = nome;
 	}
@@ -23,18 +18,6 @@ public class Materia {
 	
 	public float getMedia() {
 		return somatoriaMedia();
-	}
-
-	public String getClassificacao() {
-		if ( getMedia() < 6f ) {
-			return insatisfatorio.setNome("I");
-		} else if ( getMedia() < 7.5f ) {
-			return razoavel.setNome("R");
-		} else if ( getMedia() < 9f ) {
-			return bom.setNome("B");
-		} else {
-			return muitoBom.setNome("MB");
-		}
 	}
 	
 	private float somatoriaMedia() {
