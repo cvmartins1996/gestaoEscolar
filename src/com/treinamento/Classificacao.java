@@ -3,10 +3,10 @@ package com.treinamento;
 
 public class Classificacao {
 
-	public void qualificarDesempenho(Grade grade) {
-		grade.getMedia();
+	public float qualificarDesempenho(Grade grade) {
+		float mediaDosAlunos = grade.getMedia();
+		
+		return mediaDosAlunos;
+		
 	}
-	
-	
-	
 }
