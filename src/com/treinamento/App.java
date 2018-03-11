@@ -2,28 +2,22 @@ package com.treinamento;
 
 public class App {
 	public static void main(String[] args) {
-		//Pessoa aluno = new Aluno("Creuza");
+		
 		Aluno aluno = new Aluno("Creuza");
 		Aluno aluno2 = new Aluno("Izelda");
 		
-		Responsavel responsavel = new Responsavel("Jusué");
+		Responsavel responsavel = responsavel(aluno, aluno2);
 		
-		responsavel.adicionarFilho(aluno);
-		responsavel.adicionarFilho(aluno2);
+		Materia cienciasSociais = materiaDoAluno2();
 		
-		Materia cienciasSociais = new Materia("Ciencias Sociais");
-		cienciasSociais.adicionarNota(new Nota(5f));
-		cienciasSociais.adicionarNota(new Nota(4f));
-		
-		Materia filosofia = new Materia("Filosofia");
-		filosofia.adicionarNota(new Nota(7f));
-		filosofia.adicionarNota(new Nota(10f));
+		Materia filosofia = materiaDoAluno();
 		
 		
-		Grade grade = new Grade();
-		grade.adicionarMateria(cienciasSociais);
-		grade.adicionarMateria(filosofia);
-		aluno.setGrade(grade);
+		Grade grade = grade(aluno, cienciasSociais, filosofia);
+		
+		Classificacao classificacao = new Classificacao();
+		classificacao.qualificarDesempenho(grade);
+		aluno.setClassificacao(classificacao);
 		
 		Desempenho desempenho = new Desempenho();
 		desempenho.exibir(aluno);
@@ -36,5 +30,34 @@ public class App {
 		gestao.exibir(responsavel);
 		
 		
+	}
+
+	private static Responsavel responsavel(Aluno aluno, Aluno aluno2) {
+		Responsavel responsavel = new Responsavel("Jusué");
+		responsavel.adicionarFilho(aluno);
+		responsavel.adicionarFilho(aluno2);
+		return responsavel;
+	}
+
+	private static Materia materiaDoAluno2() {
+		Materia cienciasSociais = new Materia("Ciencias Sociais");
+		cienciasSociais.adicionarNota(new Nota(5f));
+		cienciasSociais.adicionarNota(new Nota(4f));
+		return cienciasSociais;
+	}
+
+	private static Materia materiaDoAluno() {
+		Materia filosofia = new Materia("Filosofia");
+		filosofia.adicionarNota(new Nota(7f));
+		filosofia.adicionarNota(new Nota(10f));
+		return filosofia;
+	}
+
+	private static Grade grade(Aluno aluno, Materia cienciasSociais, Materia filosofia) {
+		Grade grade = new Grade();
+		grade.adicionarMateria(cienciasSociais);
+		grade.adicionarMateria(filosofia);
+		aluno.setGrade(grade);
+		return grade;
 	}
 }

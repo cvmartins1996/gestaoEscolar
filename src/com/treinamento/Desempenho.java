@@ -25,8 +25,4 @@ public class Desempenho {
 		}
 	}
 
-	public void qualificacaoGeral(Classificacao classificacao) {
-		System.out.println("");
-	}
-
 }

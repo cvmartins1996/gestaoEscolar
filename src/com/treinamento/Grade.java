@@ -27,5 +27,4 @@ public class Grade {
 		return materias;
 	}
 	
-
 }
