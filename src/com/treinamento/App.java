@@ -1,10 +1,15 @@
 package com.treinamento;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
+
 	public static void main(String[] args) {
 		
 		Aluno aluno = new Aluno("Creuza");
 		Aluno aluno2 = new Aluno("Izelda");
+		List<Aluno> alunos = new ArrayList<>();
 		
 		Responsavel responsavel = responsavel(aluno, aluno2);
 		
@@ -12,12 +17,10 @@ public class App {
 		
 		Materia filosofia = materiaDoAluno();
 		
-		
 		Grade grade = grade(aluno, cienciasSociais, filosofia);
 		
-		Classificacao classificacao = new Classificacao();
-		classificacao.qualificarDesempenho(grade);
-		aluno.setClassificacao(classificacao);
+		alunos.add(aluno);
+		Classificacao classificacao = new ClassificacaoFactory().toAppend(alunos);
 		
 		Desempenho desempenho = new Desempenho();
 		desempenho.exibir(aluno);

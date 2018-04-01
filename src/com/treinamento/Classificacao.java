@@ -1,17 +1,6 @@
 package com.treinamento;
 
-
-public class Classificacao {
-
-	protected float media;
+public abstract class Classificacao {
 	
-	public float qualificarDesempenho(Grade grade) {
-		media = grade.getMedia();
-		return media;
-	}
-	
-	public float getDesempenho() {
-		return media;
-	}
-	
+	public abstract String getClassificacao();
 }
