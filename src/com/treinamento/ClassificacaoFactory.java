@@ -6,7 +6,7 @@ public abstract class ClassificacaoFactory  {
 
 	abstract Classificacao getClassificacao();
 	
-	Classificacao toAppend(List<Aluno> alunos) {
+	Classificacao getInstance(List<Aluno> alunos) {
 		for (Aluno aluno : alunos) {
 			if (aluno.getGrade().getMedia() > 8) {
 				return new Bom();

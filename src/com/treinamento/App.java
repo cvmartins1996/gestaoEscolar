@@ -20,7 +20,7 @@ public class App {
 		Grade grade = grade(aluno, cienciasSociais, filosofia);
 		
 		alunos.add(aluno);
-		Classificacao classificacao = new ClassificacaoFactory().toAppend(alunos);
+		Classificacao classificacao = new ClassificacaoFactory().getInstance(alunos);
 		
 		Desempenho desempenho = new Desempenho();
 		desempenho.exibir(aluno);
