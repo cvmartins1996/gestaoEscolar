@@ -11,7 +11,4 @@ public class Insatisfatorio extends Classificacao {
 		return new Insatisfatorio();
 	}
 
-
-
-	
 }

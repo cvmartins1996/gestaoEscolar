@@ -29,7 +29,7 @@ public class App {
 		aluno.setGrade(grade);
 		
 		alunos.add(aluno);
-		Classificacao classificacao = new ClassificacaoFactory().getInstance(aluno);
+		Classificacao classificacao = new ClassificacaoFactory().getInstance(alunos);
 		
 		aluno.setClassificacao(classificacao);
 		
