@@ -1,18 +1,12 @@
 package com.treinamento;
 
-import java.util.List;
-
-public abstract class ClassificacaoFactory  {
-
-	abstract Classificacao getClassificacao();
+public class ClassificacaoFactory  {
 	
-	Classificacao getInstance(List<Aluno> alunos) {
-		for (Aluno aluno : alunos) {
-			if (aluno.getGrade().getMedia() > 8) {
-				return new Bom();
-			}
+	Classificacao getInstance(Aluno aluno) {
+		if (aluno.getGrade().getMedia() > 8) {
+			return new Bom();
 		}
-		return null;
+		return new Insatisfatorio();
 	}
 	
 }

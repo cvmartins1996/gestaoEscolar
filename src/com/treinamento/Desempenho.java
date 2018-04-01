@@ -8,6 +8,7 @@ public class Desempenho {
 		System.out.println("Nome do Aluno: " + aluno.getNome());
 		mediaPorMateria(aluno);
 		mediaGeral(aluno);
+		System.out.println("Classificação do aluno: " + aluno.getClassificacao().getClassificacao());
 	}
 
 	private void mediaGeral(Aluno aluno) {

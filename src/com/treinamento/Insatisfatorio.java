@@ -2,10 +2,16 @@ package com.treinamento;
 
 public class Insatisfatorio extends Classificacao {
 
-	@Override
-	public String getClassificacao() {
-		return "Insatisfatório";
+	public Insatisfatorio() {
+		System.out.println("Insatisfatorio");
 	}
+	
+	@Override
+	public Classificacao getClassificacao() {
+		return new Insatisfatorio();
+	}
+
+
 
 	
 }
