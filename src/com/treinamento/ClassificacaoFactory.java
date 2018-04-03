@@ -1,18 +1,21 @@
 package com.treinamento;
 
-import java.util.List;
-
 public class ClassificacaoFactory  {
 	
-	Classificacao getInstance(List<Aluno> alunos) {
-		for (Aluno aluno : alunos) {
-			if (aluno.getGrade().getMedia() > 8) {
-				return new Bom();
-			}
-			
-		}
+	Classificacao getInstance(Aluno aluno) {
+		float media = aluno.getGrade().getMedia();
 		
-		return new Insatisfatorio();
+		System.out.println("media" +  media);
+		if (media == 10) {
+			return new MuitoBom();
+		} else if (media > 8) {
+			return new Bom();
+		} else if (media >  6)  {
+			return new Razoavel();
+		} else {
+			return new Insatisfatorio();
+		}
 	}
 	
 }
+

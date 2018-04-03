@@ -1,15 +1,11 @@
 package com.treinamento;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class App {
 
 	public static void main(String[] args) {
 		
 		Aluno aluno = new Aluno("Creuza");
 		Aluno aluno2 = new Aluno("Izelda");
-		List<Aluno> alunos = new ArrayList<>();
 		
 		Responsavel responsavel = new Responsavel("Jusué");
 		responsavel.adicionarFilho(aluno);
@@ -28,8 +24,7 @@ public class App {
 		grade.adicionarMateria(filosofia);
 		aluno.setGrade(grade);
 		
-		alunos.add(aluno);
-		Classificacao classificacao = new ClassificacaoFactory().getInstance(alunos);
+		Classificacao classificacao = new ClassificacaoFactory().getInstance(aluno);
 		
 		aluno.setClassificacao(classificacao);
 		
@@ -42,7 +37,6 @@ public class App {
 		
 		GestaoDoResponsavel gestao = new GestaoDoResponsavel();
 		gestao.exibir(responsavel);
-		
 		
 	}
 }

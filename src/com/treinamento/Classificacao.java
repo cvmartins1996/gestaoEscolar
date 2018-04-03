@@ -2,5 +2,5 @@ package com.treinamento;
 
 public abstract class Classificacao {
 	
-	abstract Classificacao getClassificacao();
+	abstract String getClassificacao();
 }
