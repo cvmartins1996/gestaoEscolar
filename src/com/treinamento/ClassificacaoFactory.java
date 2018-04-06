@@ -27,18 +27,59 @@ public class ClassificacaoFactory  {
 		
 	}
 	
-//	public enum Tipo_Classificacao {
-//		
-//		MUITO_BOM, BOM, RAZOAVEL, INSATISFATORIO;
-//		
-//		private boolean valor;
-//		private static float media;
-//		
-//		static {
-//			MUITO_BOM.valor = media == 10;
-//			BOM.valor = media > 8 ;
-//		}
-//	}
+}
+
+
+
+interface Pagamento{
+	
+	void validar();
 	
 }
 
+class PagamentoCartao implements Pagamento{
+
+	@Override
+	public void validar() {
+		System.out.println("Ta cavando a cova!");
+		
+	}
+	
+}
+
+class PagamentoBoleto implements Pagamento{
+
+	@Override
+	public void validar() {
+		throw new IllegalArgumentException("Tu é pobre!");
+		
+	}
+	
+}
+
+
+class Client{
+	public static void main(String[] args) {
+		int tipo = 1;
+		
+		Pagamento pagamento;
+		
+//		if(tipo == 1){
+//			pagamento = new PagamentoBoleto();
+//		}else {
+//			pagamento = new PagamentoCartao();
+//		}
+		
+//		pagamento.validar();
+		
+		
+	}
+	
+	class PagamentoFactory{
+		Pagamento getPagamento(){
+			return new Pagamento();
+		}
+		
+		
+	}
+}
