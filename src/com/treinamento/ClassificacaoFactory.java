@@ -29,8 +29,6 @@ public class ClassificacaoFactory  {
 	
 }
 
-
-
 interface Pagamento{
 	
 	void validar();
@@ -42,7 +40,6 @@ class PagamentoCartao implements Pagamento{
 	@Override
 	public void validar() {
 		System.out.println("Ta cavando a cova!");
-		
 	}
 	
 }
@@ -52,34 +49,44 @@ class PagamentoBoleto implements Pagamento{
 	@Override
 	public void validar() {
 		throw new IllegalArgumentException("Tu é pobre!");
-		
 	}
 	
 }
 
 
 class Client{
+	
+
+	private static final int PAGAMENTO_EM_BOLETO = 0;
+	private static final int PAGAMENTO_EM_CARTAO = 1;
+
 	public static void main(String[] args) {
-		int tipo = 1;
+		int tipo = PAGAMENTO_EM_CARTAO;
 		
-		Pagamento pagamento;
+		Pagamento pagamento =  new PagamentoFactory().getInstance(tipo);
 		
-//		if(tipo == 1){
-//			pagamento = new PagamentoBoleto();
-//		}else {
-//			pagamento = new PagamentoCartao();
-//		}
+		pagamento.validar();
 		
-//		pagamento.validar();
+		tipo = PAGAMENTO_EM_BOLETO;
+		Pagamento pagamento2 =  new PagamentoFactory().getInstance(tipo);
 		
+		pagamento2.validar();
 		
 	}
 	
-	class PagamentoFactory{
-		Pagamento getPagamento(){
-			return new Pagamento();
-		}
-		
-		
-	}
 }
+
+class PagamentoFactory{
+	private static final int PAGAMENTO_EM_BOLETO = 0;
+
+	Pagamento getInstance(int tipo) {
+		switch (tipo) {
+		case PAGAMENTO_EM_BOLETO:
+			return new PagamentoBoleto();
+		default:
+			return new PagamentoCartao();
+		}
+	}
+	
+}
+
