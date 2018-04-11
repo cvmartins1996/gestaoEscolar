@@ -1,8 +1,8 @@
-package com.treinamento;
+package com.treinamento.core;
 
 import java.util.List;
 
-public class GestaoDoResponsavel {
+public class GestaoDoResponsavel extends DesempenhoFactory {
 
 	public void exibir(Responsavel responsavel) {
 		

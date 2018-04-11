@@ -1,4 +1,4 @@
-package com.treinamento;
+package com.treinamento.core;
 
 public class Razoavel extends Classificacao {
 

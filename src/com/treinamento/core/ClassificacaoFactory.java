@@ -1,15 +1,18 @@
-package com.treinamento;
+package com.treinamento.core;
 
 public class ClassificacaoFactory  {
 	
-	Classificacao getInstance(Aluno aluno) {
-		float media = aluno.getGrade().getMedia();
-		
-		return classificacaoPonderada(media);
-		
+	private float media;
+
+	public ClassificacaoFactory(Aluno aluno) {
+		media = aluno.getGrade().getMedia();
 	}
 
-	private Classificacao classificacaoPonderada(float media) {
+	public static ClassificacaoFactory getInstance(Aluno aluno) {
+		return new ClassificacaoFactory(aluno);
+	}
+
+	public Classificacao getClassificacao() {
 		
 		boolean muitoBom = media == 10;
 		boolean bom = media > 8;
@@ -78,6 +81,8 @@ class Client{
 
 class PagamentoFactory{
 	private static final int PAGAMENTO_EM_BOLETO = 0;
+	
+	
 
 	Pagamento getInstance(int tipo) {
 		switch (tipo) {

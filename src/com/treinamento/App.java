@@ -1,8 +1,21 @@
 package com.treinamento;
 
+import com.treinamento.core.Aluno;
+import com.treinamento.core.Classificacao;
+import com.treinamento.core.ClassificacaoFactory;
+import com.treinamento.core.Desempenho;
+import com.treinamento.core.GestaoDoResponsavel;
+import com.treinamento.core.Grade;
+import com.treinamento.core.Materia;
+import com.treinamento.core.Nota;
+import com.treinamento.core.PessoasCadastradas;
+import com.treinamento.core.Responsavel;
+
 public class App {
 
 	public static void main(String[] args) {
+		
+		
 		
 		Aluno aluno = new Aluno("Creuza");
 		Aluno aluno2 = new Aluno("Izelda");
@@ -24,7 +37,7 @@ public class App {
 		grade.adicionarMateria(filosofia);
 		aluno.setGrade(grade);
 		
-		Classificacao classificacao = new ClassificacaoFactory().getInstance(aluno);
+		Classificacao classificacao = ClassificacaoFactory.getInstance(aluno).getClassificacao();
 		
 		aluno.setClassificacao(classificacao);
 		
