@@ -2,18 +2,28 @@ package com.treinamento.core;
 
 public class DesempenhoFactory  {
 	
-	private Aluno aluno;
-	
-	public DesempenhoFactory(Aluno aluno){
-		aluno = this.aluno;
+	public static void getInstanceForAluno(Aluno aluno){
+		new DesempenhoFactory().getAluno(aluno);
 	}
 	
-	
-	public static DesempenhoFactory getInstance(Aluno aluno){
-		return new DesempenhoFactory(aluno);
+	public static void getInstanceForResponsavel(Responsavel responsavel){
+		new DesempenhoFactory().getResponsavel(responsavel);
 	}
 	
-	void exibir() {
+	public static void getInstanceForPessoa(Pessoa pessoa){
+		new DesempenhoFactory().getPessoa(pessoa);
 	}
 	
+	private void getPessoa(Pessoa pessoa) {
+		new PessoasCadastradas(pessoa).exibir();
+	}
+
+	private void getResponsavel(Responsavel responsavel) {
+		new GestaoDoResponsavel(responsavel).exibir();
+	}
+	
+	private void getAluno(Aluno aluno) {
+		new Desempenho(aluno).exibir();
+	}
+
 }
