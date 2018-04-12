@@ -12,10 +12,10 @@ public class Materia {
 		this.nome = nome;
 	}
 
-	public void adicionarNota(Nota nota) {
-		notas.add(nota);
+	public void adicionarNota(float valor) {
+		notas.add(new Nota(valor));
 	}
-	
+
 	public float getMedia() {
 		return somatoriaMedia();
 	}
