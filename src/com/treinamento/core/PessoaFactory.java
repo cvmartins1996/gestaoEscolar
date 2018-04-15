@@ -2,6 +2,7 @@ package com.treinamento.core;
 
 public class PessoaFactory {
 	
+	private static final int RESPONSAVEL = 2;
 	private static final int ALUNO = 1;
 	private String nome;
 	private int tipo;
@@ -16,6 +17,7 @@ public class PessoaFactory {
 	}
 
 	public String getPessoa() {
+		
 		if (tipo == ALUNO) {
 			Aluno aluno = new Aluno(nome);
 			
@@ -36,7 +38,12 @@ public class PessoaFactory {
 			aluno.setClassificacao(ClassificacaoFactory.getInstance(aluno).getClassificacao());
 			new Desempenho().exibir(aluno);
 			return aluno.toLiteral();
+		} else if (tipo == RESPONSAVEL) {
+			Responsavel responsavel = new Responsavel(nome);
+			new GestaoDoResponsavel().exibir(responsavel);
+			return responsavel.toLiteral();
 		}
-		return new Responsavel(nome).toLiteral();
+		
+		return null;
 	}
 }
