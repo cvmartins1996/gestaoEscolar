@@ -1,6 +1,6 @@
 package com.treinamento.core;
 
-public class Pessoa {
+public abstract class Pessoa {
 	private String nome;
 
 	public Pessoa(String nome) {
@@ -10,5 +10,5 @@ public class Pessoa {
 	public String getNome() {
 		return nome;
 	}
-	
+
 }

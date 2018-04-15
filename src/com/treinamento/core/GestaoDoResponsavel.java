@@ -2,16 +2,9 @@ package com.treinamento.core;
 
 import java.util.List;
 
-public class GestaoDoResponsavel extends Gestao  {
+public class GestaoDoResponsavel  {
 
-	private Responsavel responsavel;
-
-	public GestaoDoResponsavel(Responsavel responsavel) {
-		this.responsavel = responsavel;
-	}
-
-	@Override
-	public void exibir() {
+	public void exibir(Responsavel responsavel) {
 		List<Pessoa> filhos = responsavel.getAluno();
 		
 		System.out.println("Nome do Responsavel: " + responsavel.getNome());
