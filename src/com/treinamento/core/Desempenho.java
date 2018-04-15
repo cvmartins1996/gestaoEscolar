@@ -5,7 +5,7 @@ import java.util.List;
 public class Desempenho{
 	
 	public void exibir(Aluno aluno) {
-		System.out.println("Nome do Aluno: " + aluno.getNome());
+		System.out.println("Nome do Aluno: " + aluno.toLiteral());
 		mediaPorMateria(aluno);
 		mediaGeral(aluno);
 		System.out.println("Classificação do aluno: " + aluno.getClassificacao().getClassificacao());

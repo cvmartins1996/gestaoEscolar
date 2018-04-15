@@ -19,4 +19,9 @@ public class Responsavel extends Pessoa {
 		return alunos;
 	}
 
+	@Override
+	String toLiteral() {
+		return nome;
+	}
+
 }

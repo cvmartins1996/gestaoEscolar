@@ -24,4 +24,9 @@ public class Aluno extends Pessoa {
 	public Classificacao getClassificacao() {
 		return classificacao;
 	}
+
+	@Override
+	String toLiteral() {
+		return nome;
+	}
 }

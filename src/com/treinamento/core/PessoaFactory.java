@@ -2,6 +2,7 @@ package com.treinamento.core;
 
 public class PessoaFactory {
 	
+	private static final int ALUNO = 1;
 	private String nome;
 	private int tipo;
 
@@ -10,15 +11,32 @@ public class PessoaFactory {
 		this.tipo = tipo;
 	}
 
-	public static PessoaFactory getInstance(String pessoa, int tipo) {
-		return new PessoaFactory(pessoa, tipo);
+	public static PessoaFactory getInstance(String nome, int tipo) {
+		return new PessoaFactory(nome, tipo);
 	}
 
-	public Pessoa getPessoa() {
-		if (tipo == 1) {
-			return new Aluno(nome);
+	public String getPessoa() {
+		if (tipo == ALUNO) {
+			Aluno aluno = new Aluno(nome);
 			
+			Materia cienciasSociais = new Materia("Ciencias Sociais");
+			cienciasSociais.adicionarNota(5f);
+			cienciasSociais.adicionarNota(4f);
+			
+			Materia filosofia = new Materia("Filosofia");
+			filosofia.adicionarNota(7f);
+			filosofia.adicionarNota(10f);
+			
+			Grade grade = new Grade();
+			grade.adicionarMateria(cienciasSociais);
+			grade.adicionarMateria(filosofia);
+			
+			aluno.setGrade(grade);
+			
+			aluno.setClassificacao(ClassificacaoFactory.getInstance(aluno).getClassificacao());
+			new Desempenho().exibir(aluno);
+			return aluno.toLiteral();
 		}
-		return new Responsavel(nome);
+		return new Responsavel(nome).toLiteral();
 	}
 }
