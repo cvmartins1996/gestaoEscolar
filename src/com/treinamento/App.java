@@ -1,22 +1,40 @@
 package com.treinamento;
 
-import com.treinamento.core.PessoaFactory;
+import com.treinamento.core.Aluno;
+import com.treinamento.core.ClassificacaoFactory;
+import com.treinamento.core.Desempenho;
+import com.treinamento.core.GestaoDoResponsavel;
+import com.treinamento.core.Grade;
+import com.treinamento.core.Materia;
 import com.treinamento.core.PessoasCadastradas;
+import com.treinamento.core.Responsavel;
 
 public class App {
 
-	private static final int ALUNO = 1;
-	private static final int RESPONSAVEL = 2;
-
 	public static void main(String[] args) {
+		Aluno aluno = new Aluno("Caio");
 		
+		Responsavel responsavel = new Responsavel("Martins");
 		
+		Materia cienciasSociais = new Materia("Ciencias Sociais");
+		cienciasSociais.adicionarNota(5f);
+		cienciasSociais.adicionarNota(4f);
 		
-		String pessoa = PessoaFactory.getInstance("Caio", ALUNO).getPessoa();
-		String responsavel = PessoaFactory.getInstance("Martins", RESPONSAVEL).getPessoa();
+		Materia filosofia = new Materia("Filosofia");
+		filosofia.adicionarNota(7f);
+		filosofia.adicionarNota(10f);
 		
+		Grade grade = new Grade();
+		grade.adicionarMateria(cienciasSociais);
+		grade.adicionarMateria(filosofia);
 		
-		new PessoasCadastradas().mostrar(pessoa);
+		aluno.setGrade(grade);
+		
+		aluno.setClassificacao(ClassificacaoFactory.getInstance(aluno).getClassificacao());
+		
+		new Desempenho().exibir(aluno);
+		new GestaoDoResponsavel().exibir(responsavel);
+		new PessoasCadastradas().mostrar(aluno);
 		new PessoasCadastradas().mostrar(responsavel);
 	}
 }

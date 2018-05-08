@@ -1,6 +1,6 @@
 package com.treinamento.core;
 
-public abstract class Pessoa {
+public class Pessoa {
 	
 	protected String nome;
 	
@@ -8,6 +8,8 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	abstract String toLiteral();
+	public String getNome() {
+		return nome;
+	}
 
 }
