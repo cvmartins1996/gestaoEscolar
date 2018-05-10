@@ -2,31 +2,27 @@ package com.treinamento.core;
 
 public class PessoaFactory {
 	
-	private static final int RESPONSAVEL = 2;
-	private static final int ALUNO = 1;
-	private String nome;
-	private int tipo;
+	private Tipo tipo;
+	
+	public enum Tipo{
+		ALUNO, RESPONSAVEL
+	}
+	
 
-	public PessoaFactory(String nome, int tipo) {
-		this.nome = nome;
+	public PessoaFactory(Tipo tipo) {
 		this.tipo = tipo;
 	}
 
-	public static PessoaFactory getInstance(String nome, int tipo) {
-		return new PessoaFactory(nome, tipo);
+	public static PessoaFactory getInstance(Tipo tipo) {
+		return new PessoaFactory(tipo);
 	}
 
-	public Pessoa getPessoa() {
+	public Pessoa getPessoa(String nome) {
 		
-		if (tipo == ALUNO) {
-			Aluno aluno = new Aluno(nome);
-			
-			new Pessoa(nome);
-			return aluno;
-		} else if (tipo == RESPONSAVEL) {
-			Responsavel responsavel = new Responsavel(nome);
-			
-			return responsavel;
+		if (tipo == Tipo.ALUNO) {
+			return new Aluno(nome);
+		} else if (tipo == Tipo.RESPONSAVEL) {
+			return new Responsavel(nome);
 		}
 		
 		return null;

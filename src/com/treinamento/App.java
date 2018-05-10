@@ -1,6 +1,7 @@
 package com.treinamento;
 
 import com.treinamento.core.Aluno;
+import com.treinamento.core.Classificacao;
 import com.treinamento.core.ClassificacaoFactory;
 import com.treinamento.core.Desempenho;
 import com.treinamento.core.GestaoDoResponsavel;
@@ -13,7 +14,6 @@ public class App {
 
 	public static void main(String[] args) {
 		Aluno aluno = new Aluno("Caio");
-		
 		Responsavel responsavel = new Responsavel("Martins");
 		
 		Materia cienciasSociais = new Materia("Ciencias Sociais");
@@ -30,7 +30,9 @@ public class App {
 		
 		aluno.setGrade(grade);
 		
-		aluno.setClassificacao(ClassificacaoFactory.getInstance(aluno).getClassificacao());
+		Classificacao classificacao = ClassificacaoFactory.getInstance(aluno).getClassificacao();
+		
+		aluno.setClassificacao(classificacao);
 		
 		new Desempenho().exibir(aluno);
 		new GestaoDoResponsavel().exibir(responsavel);
